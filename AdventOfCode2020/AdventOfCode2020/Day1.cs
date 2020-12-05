@@ -1,15 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using Common;
 
-namespace Day1
+namespace AdventOfCode2020
 {
-    class Program
+    public class Day1
     {
         static void Main(string[] args)
         {
-            string[] lines = ReadInput(args[0]);
+            string[] lines = FileHelpers.ReadLines(args[0]);
             IReadOnlyList<int> amounts = ParseAsIntegers(lines).ToList();
 
             (int a, int b) = FindTwoSummingInts(amounts);
@@ -62,26 +62,10 @@ namespace Day1
             return (0, 0, 0);
         }
 
-        #region InputHelpers
-
         static IEnumerable<int> ParseAsIntegers(string[] lines)
         {
             return lines.Select(line => int.Parse(line));
         }
-
-        static string[] ReadInput(string path)
-        {
-            try
-            {
-                return File.ReadAllLines(path);
-            }
-            catch (Exception)
-            {
-                return new string[] { };
-            }
-        }
-
-        #endregion
 
     }
 }
