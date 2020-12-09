@@ -49,10 +49,5 @@ namespace Day3
 
             return count;
         }
-
-        private static (int x, int y) AdvanceToNextSpace(int x, int y, int deltaX = 3, int deltaY = 1)
-        {
-            return (x + deltaX, y + deltaY);
-        }
     }
 }
