@@ -43,8 +43,7 @@ namespace Day2
             var firstCharacter = passwordStr[firstPosition].ToString();
             var secondCharacter = passwordStr[secondPosition].ToString();
 
-            if (firstCharacter == matchCharacter && secondCharacter == matchCharacter) return false;
-            return firstCharacter == matchCharacter || secondCharacter == matchCharacter;
+            return firstCharacter == matchCharacter ^ secondCharacter == matchCharacter;
         }
 
         static (string, string) ParseLine(string line)
